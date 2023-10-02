@@ -26,19 +26,19 @@ public class TicTacToe {
 			System.out.println(
 				E + s[0] + l + s[1] + l + s[2] +
 				H + "1 | 2 | 3" +
-				E + "---------" + H + "---------" +
+				E + "--+---+--" + H + "--+---+--" +
 				E + s[3] + l + s[4] + l + s[5] +
 				H + "4 | 5 | 6" +
-				E + "---------" + H + "---------" +
+				E + "--+---+--" + H + "--+---+--" +
 				E + s[6] + l + s[7] + l + s[8] +
 				H + "7 | 8 | 9\n"
 			);
 		} else {
 			System.out.println(
 				E + s[0] + l + s[1] + l + s[2] +
-				E + "---------" +
+				E + "--+---+--" +
 				E + s[3] + l + s[4] + l + s[5] +
-				E + "---------" +
+				E + "--+---+--" +
 				E + s[6] + l + s[7] + l + s[8]
 			);
 		}
@@ -147,6 +147,7 @@ public class TicTacToe {
 			}
 			s[inp - 1] = c;
 			if (turn % 2 == 0) {
+				System.out.printf("\nO >> " + inp + "\n");
 				print(s, true);
 			} else {
 				print(s, false);
@@ -155,7 +156,7 @@ public class TicTacToe {
 				System.out.println(c + " wins");
 				break;
 			} else if (checkDraw(s)) {
-				System.out.println("draw");
+				System.out.println("\ndraw");
 				break;
 			}
 			turn++;
